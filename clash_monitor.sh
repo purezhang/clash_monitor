@@ -1,14 +1,14 @@
 #!/bin/bash
-# clash_monitor.sh 
 
 #set -x
 
-#
 # 定义基础变量
 clash_base_folder=/root/clash-linux
-clash_log_folder="/var/logs/clash-log/$(date +"%Y-%m")"
-clash_subscribe_link="https://your.subscribe.link/address_url"
-clash_reboot_tims=0300
+clash_log_folder="/data/disk-wd4t-1/DataBackup/run_log/clash-log/$(date +"%Y-%m")"
+clash_subscribe_link="https://api.stentvessel.top/sub?target=clash&new_name=true&emoji=true&clash.doh=true&filename=YToo_SS&udp=true&url=https%3A%2F%2Fapi.ytoo.xyz%2Fosubscribe.php%3Fsid%3D45965%26token%3D7CPH1p6Mrhv5%26sip002%3D1"
+clash_reboot_at_tims=0300
+clash_subscribe_update_time=3600
+
 
 # 创建日志文件夹和日志文件
 mkdir -p ${clash_log_folder}
@@ -60,7 +60,7 @@ fi
 
 
 # 每天凌晨3点重启clash进程
-if [[ $(date +%H%M) -eq $clash_reboot_tims ]] && [[ -n $clash_pid ]]; then
+if [[ $(date +%H%M) -eq $clash_reboot_at_tims ]] && [[ -n $clash_pid ]]; then
   echo -e "$(date "+%F %T")\tRestarting Clash" | tee -a $clash_log_file_start
   kill $clash_pid
   sleep 1
@@ -74,7 +74,7 @@ clash_subscribe_file_time=$(stat -c %Y ${clash_base_folder}/clash-config.yaml)
 now_time_utc=$(date +%s)
 clash_subscribe_file_older_time=$(( now_time_utc - clash_subscribe_file_time ))
 
-if [[ $clash_subscribe_file_older_time -gt 3600 ]]; then
+if [[ $clash_subscribe_file_older_time -gt $clash_subscribe_update_time ]]; then
   echo -e "$(date "+%F %T")\tUpdating clash-config.yaml as it is older than 1 hour ($clash_subscribe_file_older_time sec)." | tee -a $clash_log_file_start
   update_clash_subscribe
 else
