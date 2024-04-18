@@ -11,7 +11,7 @@
 clash_base_folder=/root/clash-linux
 clash_subscribe_bak=${clash_base_folder}/clash_subscribe_bak/$(date +"%Y-%m")
 clash_log_folder="/data/disk-wd4t-1/DataBackup/run_log/clash-log/$(date +"%Y-%m")"
-clash_subscribe_link="your_clash_subscribe_link"
+clash_subscribe_link="https://your.subscribe.link/address_url"
 clash_reboot_at_time=0300
 clash_subscribe_filesize_min=10000
 clash_subscribe_update_time=3600
