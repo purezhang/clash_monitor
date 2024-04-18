@@ -11,7 +11,7 @@
 clash_base_folder=/root/clash-linux
 clash_subscribe_bak=${clash_base_folder}/clash_subscribe_bak/$(date +"%Y-%m")
 clash_log_folder="/data/disk-wd4t-1/DataBackup/run_log/clash-log/$(date +"%Y-%m")"
-clash_subscribe_link="https://api.stentvessel.top/sub?target=clash&new_name=true&emoji=true&clash.doh=true&filename=YToo_SS&udp=true&url=https%3A%2F%2Fapi.ytoo.xyz%2Fosubscribe.php%3Fsid%3D45965%26token%3D7CPH1p6Mrhv5%26sip002%3D1"
+clash_subscribe_link="your_clash_subscribe_link"
 clash_reboot_at_time=0300
 clash_subscribe_filesize_min=10000
 clash_subscribe_update_time=3600
