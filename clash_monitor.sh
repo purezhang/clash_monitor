@@ -6,7 +6,6 @@
 # if [[ -z $clash_monitor_crontab ]];then
 #   echo "* * * * * bash /root/clash-linux/clash_monitor.sh" >> 
 
-
 # 定义基础变量
 clash_base_folder=/root/clash-linux
 clash_subscribe_bak=${clash_base_folder}/clash_subscribe_bak/$(date +"%Y-%m")
